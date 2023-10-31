@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
+    <title>Contact | Arcturus</title>
+</head>
+<body>
+<main class="home-grid">
+    <section class="header">
+        <h1 class="title">Contact Me</h1>
+    </section>
+    <section class="nav-grid">
+        <ul class="nav-menu">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="showcase.html">Showcase</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="../blog/home.html">Blog</a></li>
+        </ul>
+    </section>
+    <section class="contact-grid">
+        <h3>Looking forward to talking with you!</h3>
+        <ul class="social-media">
+            <li><a href="https://github.com/Eldoov" target="_blank">GitHub</a></li>
+            <li><a href="https://www.instagram.com/Laidroc_/" target="_blank">Instagram</a></li>
+        </ul>
+        <form name="myForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="0f76d3aa-8196-4f9a-838f-3f4840d78d61">
+            <input type="hidden" name="apikey" value="0f76d3aa-8196-4f9a-838f-3f4840d78d61">
+            <p>
+            <input type="text" class="feedback-input" id="contact-name" name="name" minlength="2" placeholder="Name" required />
+            <p>
+            <input type="email" class="feedback-input" id="contact-email" size="30" placeholder="Email" required />
+            <p>
+            <textarea type="text" class="feedback-input" id="contact-comment" placeholder="Enter your comment here." required ></textarea>
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <p class="submit-section">
+                <input type="submit" name="submitButton" value="Submit">
+        </form>
+    </section>
+    <section class="footer">
+        <p>BU CS601 Term Project | by Zuowen Tang</p>
+    </section>
+</main>
+</body>
+</html>

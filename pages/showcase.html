@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Showcase | Arcturus</title>
+</head>
+<body>
+<main class="home-grid">
+    <section class="header">
+        <h1 id="demo" class="title">Showcase</h1>
+    </section>
+    <section class="nav-grid">
+        <ul class="nav-menu">
+            <li><a class="changeColor" href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="showcase.html">Showcase</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="../blog/home.html">Blog</a></li>
+        </ul>
+    </section>
+    <section class="showcase-grid">
+        <div class="showcase1">
+            <h2>Hide & Show</h2>
+            <h4>Click the pictures to change the background!</h4>
+            <div class="buttons">
+                <input type="button" value="Warm Color only" id="warmColor" />
+                <input type="button" value="Cool Color only" id="coolColor" />
+                <input type="button" value="B&W only" id="bwOnly" />
+                <input type="button" value="Hide All" id="hideAll" />
+                <input type="button" value="Show All" id="showAll" />
+            </div>
+            <div class="pic-window">
+                <img src="../media/white.jpg" alt="white" class="bw">
+                <img src="../media/yellow.jpg" alt="yellow" class="warm">
+                <img src="../media/green.jpg" alt="green" class="cool">
+                <img src="../media/red.jpg" alt="red" class="warm">
+                <img src="../media/blue.jpg" alt="blue" class="cool">
+                <img src="../media/black.jpg" alt="black" class="bw">
+            </div>
+            <script>
+                let imgs = document.querySelector('.pic-window').querySelectorAll('img');
+                for (let i = 0; i < imgs.length; i++){
+                    imgs[i].onclick = function(){
+                        document.body.style.backgroundImage = 'url('+ this.src +")";
+                        if (i === (imgs.length - 1)){
+                            document.getElementById("demo").style.textDecoration = "underline #ffffff 2px solid";
+                            $( "h1" ).css( {"color":"white"} );
+                            $( ".nav-menu a" ).css( {"color":"white"} );
+                            $( ".nav-menu li" ).css( {"border-left":"white 2px solid"} );
+                        }else{
+                            document.getElementById("demo").style.textDecoration = "underline #000000 2px solid";
+                            $( "h1" ).css( {"color":"black"} );
+                            $( ".nav-menu a" ).css( {"color":"black"} );
+                            $( ".nav-menu li" ).css( {"border-left":"black 2px solid"} );
+                        }
+
+                    }
+                }
+
+                $(document).ready(function(){
+                    $("#hideAll").click(function(){
+                        $("img").hide("slow");
+                    });
+                    $("#showAll").click(function(){
+                        $("img").show("slow");
+                    });
+                    $("#bwOnly").click(function(){
+                        $(".cool, .warm").hide("slow");
+                        $(".bw").show("slow");
+                    });
+                    $("#warmColor").click(function(){
+                        $(".bw, .cool").hide("slow");
+                        $(".warm").show("slow");
+                    });
+                    $("#coolColor").click(function(){
+                        $(".bw, .warm").hide("slow");
+                        $(".cool").show("slow");
+                    });
+                });
+            </script>
+        </div>
+        <div class="showcase2">
+            <h2>Play Nyan-cat</h2>
+            <div class="display-nyancat" id="display-nyancat"></div>
+            <button class="play-nyancat" id="play-nyancay" onclick="playNyancat()">Play</button>
+            <button class="hide-nyancat" id="hide-nyancat" onclick="hideNyancat()">Stop Nyan Cat</button>
+        </div>
+        <div class="showcase3">
+            <h2>Fetch Data from a Server</h2>
+            <button onclick="fetch()" id="fetch_button">Fetch my degree info</button>
+            <div id="show_table"></div>
+        </div>
+    </section>
+
+    <section class="footer">
+        <p>BU CS601 Term Project | by Zuowen Tang</p>
+    </section>
+</main>
+</body>
+</html>
